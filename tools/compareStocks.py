@@ -12,18 +12,24 @@ class CompareStocks():
         if s1mc > s2mc:
             mcDiff = "{:,}".format(s1mc-s2mc)
             mcRatio = "{:,}".format(round(s1mc/s2mc,2))
-            print(f"{self.name1} is valued at ${mcDiff} more than {self.name2}.\n{self.name1} is valued {mcRatio} times more than {self.name2}.")
+            return f"{self.name1} is valued at ${mcDiff} more than {self.name2}.\n{self.name1} is valued {mcRatio} times more than {self.name2}."
         else:
             mcDiff = "{:,}".format(s2mc-s1mc)
             mcRatio = "{:,}".format(round(s2mc/s1mc,2))
-            print(f"{self.name2} is valued at ${mcDiff} more than {self.name1}.\n{self.name2} is valued {mcRatio} times more than {self.name1}.")
+            return f"{self.name2} is valued at ${mcDiff} more than {self.name1}.\n{self.name2} is valued {mcRatio} times more than {self.name1}."
 
     def recs(self):
         s1rec = self.stock1.info["recommendationKey"]
         s2rec = self.stock2.info["recommendationKey"]
-        print(f"{self.name1} is recommended as a {s1rec}.\n{self.name2} is recommended as a {s2rec}.\nDo your own research too.")
+        return f"{self.name1} is recommended as a {s1rec}.\n{self.name2} is recommended as a {s2rec}.\nDo your own research too."
             
 
-# Example Use Case
+## Example Use Cases
 cs = CompareStocks("AAPL","FB")
 cs.marketVal()
+# Apple Inc. is valued at $2,249,216,950,272 more than Meta Platforms, Inc..
+# Apple Inc. is valued 6.07 times more than Meta Platforms, Inc..
+cs.recs()
+# Apple Inc. is recommended as a buy.
+# Meta Platforms, Inc. is recommended as a buy.
+# Do your own research too.
