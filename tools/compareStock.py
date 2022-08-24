@@ -12,8 +12,7 @@ class CompareStocks():
         if s1mc > s2mc:
             mcDiff = "{:,}".format(s1mc-s2mc)
             mcRatio = "{:,}".format(round(s1mc/s2mc,2))
-            print(f"{self.name1} is valued at ${mcDiff} more than {self.name2}.")
-            print(f"{self.name1} is valued {mcRatio} times more than {self.name2}.")
+            print(f"{self.name1} is valued at ${mcDiff} more than {self.name2}.\n{self.name1} is valued {mcRatio} times more than {self.name2}.")
         else:
             mcDiff = "{:,}".format(s2mc-s1mc)
             mcRatio = "{:,}".format(round(s2mc/s1mc,2))
