@@ -26,3 +26,6 @@ for symb in data.index:
 
 # drop all stocks that have missing info
 data = data.dropna()
+
+# output data frame as json file
+data.to_json("stock_data.json")
