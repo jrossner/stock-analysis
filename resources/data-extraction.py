@@ -7,7 +7,7 @@ variable_list = ["ebitdaMargins","profitMargins","grossMargins","operatingCashfl
 "totalRevenue","forwardPE","pegRatio","shortPercentOfFloat","heldPercentInsiders","priceToBook","forwardEps"]
 
 # get all tickers from S&P 500
-sp500 = pd.read_csv("tickers.txt",sep='|')
+sp500 = pd.read_csv("tickers.csv",sep=',')
 data = pd.DataFrame(index = sp500["Symbol"])
 
 # set up data frame
