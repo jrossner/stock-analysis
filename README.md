@@ -3,7 +3,7 @@ tools for stock analyses
 
 ## Catalog
 1. [Comparer](https://github.com/jrossner/stock-tools/blob/main/tools/compareStocks.py)
- - Compares two companies
+   - Compares two companies
 
 ## Please Read
  - __Do Your Own Research.__ 
