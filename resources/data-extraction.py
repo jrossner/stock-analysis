@@ -8,9 +8,14 @@ variable_list = ["ebitdaMargins","profitMargins","grossMargins","operatingCashfl
 
 # get all tickers from S&P 500
 sp500 = pd.read_csv("tickers.csv",sep=',')
+
+# format stock tickers (like BRK.B) to yahoo format
+sp500["Symbol"] = sp500["Symbol"].str.replace(".","/")
+
+# start our data frame
 data = pd.DataFrame(index = sp500["Symbol"])
 
-# set up data frame
+# set up data frame with variables
 for var in variable_list:
     data[var] = None
 
@@ -21,7 +26,7 @@ for symb in data.index:
       try:
           data.loc[symb][key] = info[key]
       except:
-          print(f"issue with {symb} for {key}")
+          print(f"issue with {symb}")
           break
 
 # drop all stocks that have missing info
