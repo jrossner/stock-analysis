@@ -32,5 +32,8 @@ for symb in data.index:
 # drop all stocks that have missing info
 data = data.dropna()
 
+# format "none" (no recommendations) to "No recommendation"
+stock_data["recommendationKey"] = stock_data["recommendationKey"].str.replace("none","No recommendation")
+
 # output data frame as json file
 data.to_json("stock_data.json")
